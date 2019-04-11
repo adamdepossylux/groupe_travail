@@ -1,0 +1,9 @@
+n=3    
+N=n+1;
+x1=linspace(0,1,N);
+x2=linspace(0,1,N);
+x2=x2';
+f=6*(1-3*x1+2*x1.^2).*(x2-1).^3.*x2+6*(1-3*x2+2*x2.^2).*(x1-1).^3.*x1;
+bord=sparse(4*N,4*N);
+uex=x1.*x2.*(x1-1).^3.*(x2-1).^3;
+[X,err]=fct(f,bord,uex);
